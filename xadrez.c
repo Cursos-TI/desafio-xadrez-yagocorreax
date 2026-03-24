@@ -44,6 +44,23 @@ int main() {
     } while (k <= 8);
 
     return 0;
+} // =========================
+// CAVALO (loops aninhados)
+// =========================
+printf("\nMovimento do Cavalo:\n");
+
+// Loop externo (for)
+for (int i = 1; i <= 1; i++) {
+
+    // Loop interno (while) → 2 casas para baixo
+    int baixo = 1;
+    while (baixo <= 2) {
+        printf("Baixo\n");
+        baixo++;
+    }
+
+    // Movimento final → 1 casa para esquerda
+    printf("Esquerda\n");
 }
 
     return 0;
