@@ -61,6 +61,77 @@ for (int i = 1; i <= 1; i++) {
 
     // Movimento final → 1 casa para esquerda
     printf("Esquerda\n");
+} // =========================
+// TORRE (recursividade)
+// =========================
+void moverTorre(int casas) {
+    if (casas == 0) return;
+
+    printf("Direita\n");
+    moverTorre(casas - 1);
+}
+
+// =========================
+// RAINHA (recursividade)
+// =========================
+void moverRainha(int casas) {
+    if (casas == 0) return;
+
+    printf("Esquerda\n");
+    moverRainha(casas - 1);
+}
+
+// =========================
+// BISPO (recursividade + loops aninhados)
+// =========================
+void moverBispo(int casas) {
+    if (casas == 0) return;
+
+    // Loop externo (vertical)
+    for (int i = 0; i < 1; i++) {
+
+        // Loop interno (horizontal)
+        for (int j = 0; j < 1; j++) {
+            printf("Cima Direita\n");
+        }
+    }
+
+    moverBispo(casas - 1);
+}
+
+// =========================
+// USO DAS FUNÇÕES
+// =========================
+printf("\nMovimento da Torre:\n");
+moverTorre(5);
+
+printf("\nMovimento do Bispo:\n");
+moverBispo(5);
+
+printf("\nMovimento da Rainha:\n");
+moverRainha(8);
+
+// =========================
+// CAVALO (loops complexos)
+// =========================
+printf("\nMovimento do Cavalo:\n");
+
+// Loop externo (2 casas para cima)
+for (int i = 1; i <= 2; i++) {
+
+    if (i <= 0) continue; // controle de fluxo
+
+    printf("Cima\n");
+
+    // Após subir 2 casas, move 1 para direita
+    if (i == 2) {
+        for (int j = 1; j <= 1; j++) {
+
+            if (j > 1) break; // controle de fluxo
+
+            printf("Direita\n");
+        }
+    }
 }
 
     return 0;
